@@ -1,0 +1,137 @@
+/*
+Fr is a fractional unit and 1fr is for 1 part of the available space.
+
+1rem = 10px;
+If we keep font-size: 62.5%; 
+    This means 62.5% of Default Size(16px)
+    0.625*16px=10px which is 1rem
+
+vh=viewportHeight
+height: 100vh;/*means 100% of parent's element's height*/
+
+html{
+    font-size: 62.5%; 
+    box-sizing: border-box;
+}
+body{
+    margin: 0; /*Get rid of Margin(Extra spacing all around the page)*/
+    height: 100vh;/*To occupy full page*/
+    font-size: 1.6rem;/*16px*/
+    font-family: Helvetica,Arial,sans-serif;
+    /*For screens that doesn't have Helvetica,Arial is displayes and so on..*/
+}
+
+/*Layout*/
+
+/*Class grid-container*/
+.grid-container{
+    display:grid;/*grid is layout system in CSS which is responsive*/
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+    /*Decide Space that each row and column will occupy*/
+    grid-template-columns: 1fr;/*We have only 1 column and size = 1fr*/
+    grid-template-rows: 5rem 1fr 5rem;/*For 3 rows : header,main & footer*/
+    height: 100%;/*To occupy full page*/
+}
+
+header{
+    grid-area:header;
+    /*means all properties we write inside here will replace the placeholder 'header' written above in the grid-container*/
+    background-color: #203040;/*Dark Blue*/
+}
+
+main{
+    grid-area: main;
+    /*means all properties we write inside here will replace the placeholder 'main' written above in the grid-container*/
+    padding: 1rem;/*space to leave from top and left*/
+}
+
+footer{
+    grid-area: footer;
+    background-color: #203040;
+    color: #ffffff
+}
+
+
+h1{
+    font-size: 1.8rem;
+    padding: 1rem 0;/*Vertical Horizontal*/
+}
+h2{
+    font-size: 1.6rem;
+    padding: 1rem 0;/*Vertical Horizontal*/
+}
+/*For all Links*/
+a{
+    text-decoration: none;/*remove underlines*/
+}
+/*If user hovers over a Link*/
+a:hover{
+    color:#ff8000;/*From white to red*/
+}
+/*For all links inside header*/
+header a{
+    color: #ffffff;
+    padding: 1rem;
+}
+/*Anchor tag and brand class for Website Name written in Header*/
+/*Bcoz we Want to have seperate properties for The website name*/
+/*E.g : no color change on hover*/
+a.brand{
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+
+/*Class for the whole of Header itself*/
+.row{
+   display: flex;/*So that items are placed Next to each other, not seperate Lines*/
+   flex-wrap: wrap;/*makes rows responsive,so if no space, it displays the rest of items in a Seperate Line*/
+   justify-content: space-between;/*Creates max possible distance between items in row class*/
+   align-items: center;/*Aligns vertically,not horizontally*/
+}
+
+/*For Footer*/
+/*Add a subclass to row*/
+.row.center
+{
+    justify-content: center;/*For horizontal alignment*/
+}
+
+/*Images*/
+
+img{
+    border-radius: 0.5rem;
+}
+img.medium{
+    max-width: 24rem;
+    width: 100%;
+}
+
+/*Card*/
+.card{
+    border: 0.1rem #c0c0c0 solid;/*width,color=grey,style=solid*/
+    background-color: #f8f8f8;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+.card-body{
+    padding: 1rem;
+    
+}
+/*For All children of card-body means all subclsses like rating,price etc*/
+.card-body > * {
+    margin-bottom: 0.5rem;
+}
+.price{
+    font-size: 2rem;
+}
+
+/*Rating*/
+
+.rating span{
+    color:#f0c040;
+    margin: 0.1rem;
+}
