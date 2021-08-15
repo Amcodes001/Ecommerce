@@ -3,30 +3,19 @@ import bcrypt from 'bcryptjs';
 const data = {
   users: [
     {
-      name: 'Basir',
+      name: 'Admin',
       email: 'admin@example.com',
       password: bcrypt.hashSync('1234', 8),
       isAdmin: true,
     },
     {
-      name: 'John',
+      name: 'User',
       email: 'user@example.com',
       password: bcrypt.hashSync('1234', 8),
       isAdmin: false,
     },
   ],
   products: [
-    {
-      name: 'Mayur',
-      category: 'Pants',
-      image: '/images/p4.jpg',
-      price: 78,
-      countInStock: 15,
-      brand: 'Nike',
-      rating: 4.5,
-      numReviews: 14,
-      description: 'Comfortable and Light Coloured Pant.',
-    },
     {
       name: 'Nike Slim Shirt',
       category: 'Shirts',
